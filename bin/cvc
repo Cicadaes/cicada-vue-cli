@@ -1,0 +1,26 @@
+#!/usr/bin/env node
+
+const yargs = require('yargs');
+
+yargs.usage('Usage: $0 <command> [options]')
+    .commandDir('../cmds')
+    .demandCommand()
+    .alias('v', 'version')
+    .help('h')
+    .alias('h', 'help')
+    .epilog('copyright 2018');
+
+// 如果执行不存在或不正确的命令，会执行到下面的逻辑
+// yargs.showHelp();
+// console.log('\n\nInspecting command or options');
+const argv = yargs.argv;
+const commands = yargs.getCommandInstance().getCommands();
+if (commands.length > 0) {
+    if (argv.command) {
+        if (commands.indexOf(argv.command)) {
+            yargs.showHelp();
+        }
+    } else if (commands.indexOf(argv._[0]) === -1) {
+        yargs.showHelp();
+    }
+}
