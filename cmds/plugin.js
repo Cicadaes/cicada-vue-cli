@@ -3,8 +3,6 @@ const path = require('path');
 const inquirer = require('inquirer');
 const shelljs = require('shelljs');
 const log4js = require('log4js');
-const ora = require('ora');
-const execa = require('execa');
 
 log4js.configure({
     appenders: {
@@ -67,20 +65,10 @@ const generate = function (config) {
 const install = function (config) {
     shelljs.cd(config.name);
 
-    const spinner = ora()
-    const exeEnd = function() {
-        spinner.stop();
-    }
-
-    spinner.start();
     if (shelljs.which('yarn')) {
-        execa.shell('yarn install').then(function () {
-            exeEnd();
-        });
+        shelljs.exec('yarn install');
     } else {
-        execa.shell('npm install').then(function () {
-            exeEnd();
-        });
+        shelljs.exec('npm install');
     }
     
 }
