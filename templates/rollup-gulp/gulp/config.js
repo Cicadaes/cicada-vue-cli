@@ -7,16 +7,16 @@ module.exports = {
       './src/**/*.js',
       './src/**/*.vue'
     ],
-    destFileName: 'bundle.js',
+    destFileName: '<#=name#>.js',
     dest: './dist'
   },
   inject: {
     target: './dev/index.html',
     sources: [
-      './dist/bundle.js',
-      './dist/main.css'
+      './dist/<#=name#>.js',
+      './dist/<#=name#>.css'
     ],
-    dest: './dist'
+    dest: './dev'
   },
   lint: {
     files: [
