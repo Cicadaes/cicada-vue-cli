@@ -47,6 +47,7 @@ if (isDev) {
         {
             file: 'dist/<#=name#>.js',
             format: 'umd',
+            name: '<#=name#>',
             strict: true
         },
         {
