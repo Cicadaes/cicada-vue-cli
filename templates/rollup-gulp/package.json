@@ -21,6 +21,7 @@
     "gulp": "^3.9.1",
     "gulp-eslint": "^4.0.2",
     "gulp-inject": "^4.3.0",
+    "gulp-server-livereload": "^1.9.2",
     "gulp-sourcemaps": "^2.6.4",
     "gulp-stylus": "^2.7.0",
     "require-dir": "^1.0.0",
