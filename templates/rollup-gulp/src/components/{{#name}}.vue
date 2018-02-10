@@ -6,9 +6,9 @@
 export default {
   name: '<#=name#>',
   props: {
-      text: String
+    text: String
   },
-  data() {
+  data () {
     return {
       
     }
