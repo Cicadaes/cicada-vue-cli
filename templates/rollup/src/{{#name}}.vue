@@ -1,10 +1,8 @@
 <template>
-  <div :class="styles.container">{{ text }}</div>
+  <div class="container">{{ text }}</div>
 </template>
 
 <script>
-import styles from './<#=name#>.styl'
-
 export default {
   name: '<#=name#>',
   props: {
@@ -12,12 +10,13 @@ export default {
   },
   data() {
     return {
-      styles: {
-        container: styles.container
-      }
+      
     }
   }
 }
 </script>
+
+<style lang="stylus" src="./<#=name#>.styl"></style>
+
 
 
