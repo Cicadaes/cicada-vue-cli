@@ -2,7 +2,7 @@
 
 module.exports = {
   bundle: {
-    entry: './src/index.js',
+    entry: './dev/app.js',
     files: [
       './src/**/*.js',
       './src/**/*.vue'
@@ -32,5 +32,13 @@ module.exports = {
       './src/stylus/**/*.styl'
     ],
     dest: './dist'
+  },
+  copy: {
+    bundle: {
+      files: [
+        './dist/**/*'
+      ],
+      dest: './dev'
+    }
   }
 }
