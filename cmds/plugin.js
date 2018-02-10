@@ -42,10 +42,11 @@ const generate = function (config) {
             })
             .forEach(function (f) {
                 const file = path.join(pluginDir, f);
-                const dotFiles = ['gitignore', 'npmignore'];
+                // shelljs.ls不会list出如.gitignore的文件,所以在模板中先把文件名中的点去掉,然后在mv时再拼接上
+                const dotFiles = ['gitignore', 'npmignore', 'eslintrc'];
 
                 if (dotFiles.indexOf(f) > -1) {
-                    return shelljs.mv(f, path.join(pluginDir, '.' + f));
+                    return shelljs.mv(file, path.join(pluginDir, '.' + f));
                 }
 
                 shelljs.sed('-i', /<#=name#>/g, config.name, file);
@@ -120,8 +121,8 @@ exports.handler = function (argv) {
         {
             type: 'list',
             name: 'template',
-            message: 'Please enter template:',
-            default: 'rollup',
+            message: 'Please choice template:',
+            default: 'rollup-gulp',
             choices: tpls
         },
         {
