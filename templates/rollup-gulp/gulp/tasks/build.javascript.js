@@ -6,6 +6,7 @@ const rollup = require('rollup-stream')
 const buble = require('rollup-plugin-buble')
 const source = require('vinyl-source-stream')
 const buffer = require('vinyl-buffer')
+const connect = require('gulp-connect')
 
 const config = require('../config')
 let rollupCache
@@ -29,4 +30,5 @@ gulp.task('build:javascript', function () {
     .pipe(source(config.bundle.destFileName))
     .pipe(buffer())
     .pipe(gulp.dest(config.bundle.dest))
+    .pipe(connect.reload())
 })

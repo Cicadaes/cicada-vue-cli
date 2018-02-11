@@ -8,13 +8,13 @@ module.exports = {
       './src/**/*.vue'
     ],
     destFileName: '<#=name#>.js',
-    dest: './dist'
+    dest: './dev'
   },
   inject: {
     target: './dev/index.html',
     sources: [
-      './dist/<#=name#>.js',
-      './dist/<#=name#>.css'
+      './dev/<#=name#>.js',
+      './dev/<#=name#>.css'
     ],
     dest: './dev'
   },
@@ -31,14 +31,6 @@ module.exports = {
     files: [
       './src/stylus/**/*.styl'
     ],
-    dest: './dist'
-  },
-  copy: {
-    bundle: {
-      files: [
-        './dist/**/*'
-      ],
-      dest: './dev'
-    }
+    dest: './dev'
   }
 }
