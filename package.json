@@ -12,8 +12,10 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "chalk": "^2.3.2",
     "inquirer": "^5.1.0",
     "log4js": "^2.5.2",
+    "request": "^2.83.0",
     "shelljs": "^0.8.1",
     "yargs": "^11.0.0"
   }
