@@ -53,7 +53,7 @@ exports.handler = function (argv) {
         if (fs.existsSync(tmp)) rm(tmp);
         download(template, tmp, err => {
             spinner.stop();
-            if (err) logger.error(err.message);
+            if (err) logger.error(err);
             generate('plugin', name, tmp, to, err => {
                 if (err) logger.error(err);
                 console.log()
