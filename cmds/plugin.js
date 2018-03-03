@@ -57,7 +57,7 @@ exports.handler = function (argv) {
             generate('plugin', name, tmp, to, err => {
                 if (err) logger.error(err);
                 console.log()
-                logger.info('Generate "%s".', name);
+                console.log('Generate "%s".', name);
             });
         });
     }
