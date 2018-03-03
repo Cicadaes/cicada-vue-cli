@@ -6,7 +6,7 @@ const home = require('user-home');
 const rm = require('rimraf').sync;
 const download = require('download-git-repo');
 
-const logger = require('../lib/logger').logger;
+const logger = require('../lib/logger');
 const generate = require('../lib/generate');
 
 exports.command = 'plugin <template> [name]';

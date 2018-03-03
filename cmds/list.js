@@ -1,7 +1,7 @@
 const request = require('request');
 const chalk = require('chalk');
 
-const logger = require('../lib/logger').logger;
+const logger = require('../lib/logger');
 
 exports.command = 'list';
 exports.aliases = ['l'];
